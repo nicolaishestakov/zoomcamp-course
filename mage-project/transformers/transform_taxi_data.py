@@ -14,7 +14,7 @@ def transform(data, *args, **kwargs):
 
 @test
 def test_no_zero_pass_count(output, *args):
-    assert output['passenger_count'].isin([0]).sum() == 0, 'No zero passangers!'
+    assert output['passenger_count'].isin([0]).sum() == 0, 'No zero passengers!'
 
 @test
 def test_no_zero_trips(output, *args):
