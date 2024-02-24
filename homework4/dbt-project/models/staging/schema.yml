@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: staging
+    database: careful-muse-411920
+    schema: hw4_trips_data
+
+    tables: 
+      - name: green_tripdata
+      - name: yellow_tripdata
+      - name: fhv_tripdata
