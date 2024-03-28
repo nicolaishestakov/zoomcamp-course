@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  repo:
+    build:
+      context: ./repo
+      dockerfile: Dockerfile
+      args:
+        #REPO_URL: "https://github.com/Revolutionary-Games/Thrive.git"
+        REPO_URL: "https://github.com/nicolaishestakov/UglyTetris.git"
+        SNAPSHOTS_DIR: "/shared/snapshots"
+    volumes:
+      - shared_volume:/shared
+  metrics-calc:
+    build:
+      context: ./metrics-calc      
+      dockerfile: Dockerfile
+      args:
+        SNAPSHOTS_DIR: "/shared/snapshots"
+        METRICS_DIR: "/shared/metrics"
+    volumes:
+      - shared_volume:/shared
+
+volumes:
+  shared_volume:
